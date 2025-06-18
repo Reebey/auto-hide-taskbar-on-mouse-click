@@ -4,6 +4,10 @@ A lightweight AutoHotkey script that automatically hides the Windows taskbar and
 
 If you ever got annoyed by the taskbar popping up unexpectedly and interrupting your workflow, this tool is for you.
 
+
+
+> _Note: This script was written with the Windows taskbar auto-hide option enabled.
+> 
 ---
 
 ## Features

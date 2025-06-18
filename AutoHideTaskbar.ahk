@@ -4,7 +4,7 @@
 ; --- Script constant parameters ---
 TaskbarHideDelay := 1000           ; Delay in milliseconds before hiding the taskbar
 MouseCheckInterval := 100          ; Interval in milliseconds to check mouse position
-IsAtBottomThreshold := 1           ; Threshold in pixels from the very bottom of the screen
+IsAtBottomThreshold := 5           ; Threshold in pixels from the very bottom of the screen
 
 ; --- Global settings ---
 Persistent                       ; Keep the script running indefinitely
@@ -73,12 +73,14 @@ SetHideTaskBarTimer(time) {
 }
 
 ShowTaskbar() {
-    WinShow "ahk_class Shell_TrayWnd"
+    if WinExist("ahk_class Shell_TrayWnd")
+        WinShow "ahk_class Shell_TrayWnd"
     global IsTaskBarShown := 1
 }
 
 HideTaskbar() {
-    WinHide "ahk_class Shell_TrayWnd"
+    if WinExist("ahk_class Shell_TrayWnd")
+    	WinHide "ahk_class Shell_TrayWnd"
     global IsTaskBarShown := 0
 }
 
